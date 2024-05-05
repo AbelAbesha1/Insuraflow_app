@@ -8,18 +8,115 @@ const RegistrationForm = () => {
 
   const onSubmit = async (data) => {
     const formData = {
-      firstName: data.firstName,
-      lastName: data.lastName,
-      email: data.email,
-      password: data.password,
-      phoneNumber: data.phoneNumber,
-      role: data.role,
+
+      prosperName: data.prosperName,
+      age: data.age,
       address: {
-        subCity: data.subCity,
-        kebele: data.kebele,
-        houseNumber: data.houseNumber,
-        postalCode: data.postalCode,
+        businessAddress: {
+          subCity: data.subCity,
+          kebele: data.kebele,
+          houseNumber: data.houseNumber,
+          email: data.email,
+          faxNumber: data.faxNumber,
+          postaBox: data.postaBox,
+          teleNum: data.teleNum
+        },
+        resedentialAddress: {
+          subCity: data.subCity,
+          kebele: data.kebele,
+          houseNumber: data.houseNumber,
+          email: data.email,
+          postaBox: data.postaBox,
+          teleNum: data.teleNum
+        }
       },
+      occupation: data.occupation,
+      periodOfInsuranceFrom: data.periodOfInsuranceFrom,
+      periodOfInsuranceTo: data.periodOfInsuranceTo,
+      // Number 5 is confusing 
+      coverRequired: data.coverRequired,
+      coverRequiredExtraFitting: {
+        status: data.status,
+        values: {
+          forRadioAndPlayers: data.forRadioAndPlayers,
+          forCommunication: data.forCommunication,
+          forBullCar: data.forBullCar
+        }
+      },
+      vicheleStatus: {
+        isInGoodStateOfRepair: data.isInGoodStateOfRepair,
+        whereDoesItLeftOvernight: {
+          openButInYourPremises: data.openButInYourPremises,
+          elseWhere: data.elseWhere
+        }
+      },
+      areYouOwner:{
+        ownerStatus: data.ownerStatus,
+        ownerName: data.ownerName
+      },
+      isUnderHirePurchase:{
+        hirePurchaseStatus: data.hirePurchaseStatus,
+        nameOfCompany: data.nameOfCompany,
+        addressOfCompany: data.addressOfCompany
+      },
+      willVechileUsedForPrivate:{
+        privateUsageStatus: data.privateUsageStatus,
+        itsUsage: data.itsUsage
+      },
+      voluntaryExcessForCover: data.voluntaryExcessForCover,
+      driversAndDriving:{
+        howLong1: data.howLong1,
+        howLong2: data.howLong2,
+        regularityForPastYear: data.regularityForPastYear,
+        driverLicense:{
+          place: data.place,
+          date: data.date
+        }
+      },
+      disableityStatus: data.disableityStatus,
+      offenceWithMotorVechiles: {
+        offenceStatus: data.offenceStatus,
+        offence: data.offence
+      },
+      insuredMotorVechile:{
+        insuranaceStatus: data.insuranaceStatus,
+        nameOfInsurance: data.nameOfInsurance,
+
+      },
+      insuranceCompanyEver:{
+        declinedYourProposal: data.declinedYourProposal,
+        refusedToReniew: data.refusedToReniew,
+        cancelledYourPolicy: data.cancelledYourPolicy,
+        requirdIncrease: data.requirdIncrease,
+        imposedExcess: data.imposedExcess,
+        imposedSpecialCondition: data.imposedSpecialCondition
+      },
+
+      accidentOverThreeYears:{
+        accidentDate: data.accidentDate,
+        damagesOfVechile: data.damagesOfVechile,
+        claimByThirdParty:{
+          personalInjury: data.personalInjury,
+          propertyDamage: data.propertyDamage
+        }
+      },
+      entitledToNoClaimBonus:{
+        claimStatus: data.claimStatus,
+        produceCertficate: data.produceCertficate,
+      },
+      personalInsuranceBenefit:{
+        wishPersonalBenefit: data.wishPersonalBenefit,
+        heldPersonalInsurance: {
+          insuranceStatus: data.insuranaceStatus,
+          nameOfInsuranceHeld: data.nameOfInsuranceHeld
+        }
+      },
+      wishToInsurePaidDriver: data.wishToInsurePaidDriver,
+      isPassengersToBeInsuredAgainstPassengersLiablity: data.isPassengersToBeInsuredAgainstPassengersLiablity,
+      dateOfIssue: data.dateOfIssue,
+      branch: data.branch,
+      underWriter: data.underWriter,
+      
     };
 
     // console.log(Data);
