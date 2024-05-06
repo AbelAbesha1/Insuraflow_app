@@ -13,6 +13,8 @@ const RegistrationForm = () => {
     const formData = {
       prosperName: data.prosperName,
       age: data.age,
+      password: data.password,
+      email: data.email,
       address: {
         businessAddress: {
           subCity: data.subCity,
@@ -314,6 +316,34 @@ const RegistrationForm = () => {
                     )}
                   />
                 </div>
+                {/* <div className="w-96">
+                  <Controller
+                    control={control}
+                    name="email"
+                    render={({ field }) => (
+                      <Input
+                        {...field}
+                        variant="st"
+                        label="Email"
+                        placeholder="Email"
+                      />
+                    )}
+                  />
+                </div> */}
+                {/* <div className="w-96">
+                  <Controller
+                    control={control}
+                    name="password"
+                    render={({ field }) => (
+                      <Input
+                        {...field}
+                        variant="st"
+                        label="Password"
+                        placeholder="Password"
+                      />
+                    )}
+                  />
+                </div> */}
                 <div className="w-96">
                   <Controller
                     control={control}
@@ -390,9 +420,7 @@ const RegistrationForm = () => {
               </div>
             </div>
             <div className="">
-              <p className="text-[32px] font-normal text-center pb-10">
-                Insurance
-              </p>
+              
               <div className="flex gap-9 flex-wrap">
                 <div className="w-96">
                   <Controller
@@ -422,76 +450,89 @@ const RegistrationForm = () => {
                     )}
                   />
                 </div>
-                Cover Required
-                <div className="w-96">
-                  <Controller
-                    control={control}
-                    name="coverRequired"
-                    render={({ field }) => (
-                      <>
-                        <Radio
-                          {...field}
-                          label="Comprehensive"
-                          value="Comprehensive"
-                          ripple={true}
-                        />
-                        <Radio
-                          {...field}
-                          label="Third Party Only"
-                          value="Third Party Only"
-                          ripple={true}
-                        />
-                        <Radio
-                          {...field}
-                          label="Third Party Fire and Theft"
-                          value="Third Party Fire and Theft"
-                          ripple={true}
-                        />
-                        <Radio
-                          {...field}
-                          label="Compulsory Motor Insurance"
-                          value="Compulsory Motor Insurance"
-                          ripple={true}
-                        />
-                      </>
-                    )}
-                  />
+                <div className="">
+                  <p className="text-[32px] font-normal text-center pb-10">
+                    Cover Required
+                  </p>
+                  <div className="flex gap-9 flex-wrap">
+                    <div className="w-96">
+                      <Controller
+                        control={control}
+                        name="coverRequired"
+                        render={({ field }) => (
+                          <>
+                            <Radio
+                              {...field}
+                              label="Comprehensive"
+                              value="Comprehensive"
+                              ripple={true}
+                            />
+                            <Radio
+                              {...field}
+                              label="Third Party Only"
+                              value="Third Party Only"
+                              ripple={true}
+                            />
+                            <Radio
+                              {...field}
+                              label="Third Party Fire and Theft"
+                              value="Third Party Fire and Theft"
+                              ripple={true}
+                            />
+                            <Radio
+                              {...field}
+                              label="Compulsory Motor Insurance"
+                              value="Compulsory Motor Insurance"
+                              ripple={true}
+                            />
+                          </>
+                        )}
+                      />
+                    </div>
+                  </div>
                 </div>
-                Driver Covered
-                <div className="w-96">
-                  <Controller
-                    control={control}
-                    name="driverCovered"
-                    render={({ field }) => (
-                      <>
-                        <Radio
-                          {...field}
-                          label="Insured Only"
-                          value="Insured Only"
-                          ripple={true}
-                        />
-                        <Radio
-                          {...field}
-                          label="Third Party Only"
-                          value="Third Party Only"
-                          ripple={true}
-                        />
-                        <Radio
-                          {...field}
-                          label="Third Party Fire and Theft"
-                          value="Third Party Fire and Theft"
-                          ripple={true}
-                        />
-                        <Radio
-                          {...field}
-                          label="Compulsory Motor Insurance"
-                          value="Compulsory Motor Insurance"
-                          ripple={true}
-                        />
-                      </>
-                    )}
-                  />
+                <div className="">
+                  <p className="text-[32px] font-normal text-center pb-10">
+                  Driver Covered
+                  </p>
+                  <div className="flex gap-9 flex-wrap"></div>
+                 
+                  <div className="w-96">
+                    <Controller
+                      control={control}
+                      name="driverCovered"
+                      render={({ field }) => (
+                        <>
+                          <Radio
+                            {...field}
+                            label="Insured Only"
+                            value="Insured Only"
+                            ripple={true}
+                          />
+                          <Radio
+                            {...field}
+                            label="Third Party Only"
+                            value="Third Party Only"
+                            ripple={true}
+                          />
+                          <Radio
+                            {...field}
+                            label="Third Party Fire and Theft"
+                            value="Third Party Fire and Theft"
+                            ripple={true}
+                          />
+                          <Radio
+                            {...field}
+                            label="Compulsory Motor Insurance"
+                            value="Compulsory Motor Insurance"
+                            ripple={true}
+                          />
+                        </>
+                      )}
+                    />
+                  </div>
                 </div>
+
                 <div>
                   <p className="text-[32px] font-normal text-center pb-10">
                     Cover requested
@@ -669,75 +710,72 @@ const RegistrationForm = () => {
                                   )}
                                 />
                               </div>
-                              
-                            
                             </div>
                           )}
                         </>
                       )}
                     />
                   </div>
-                  If Vechiless are aquired under hire purchase
-                              agreement
+                  If Vechiless are aquired under hire purchase agreement
+                  <div className="w-96">
+                    <Controller
+                      control={control}
+                      name="isUnderHirePurchase.hirePurchaseStatus"
+                      render={({ field }) => (
+                        <>
+                          <Radio
+                            {...field}
+                            label="Yes"
+                            value="Yes"
+                            ripple={true}
+                          />
+
+                          <Radio
+                            {...field}
+                            label="No"
+                            value="No"
+                            ripple={true}
+                          />
+                          {field.value === "Yes" && (
+                            <>
                               <div className="w-96">
                                 <Controller
                                   control={control}
-                                  name="isUnderHirePurchase.hirePurchaseStatus"
+                                  name="isUnderHirePurchase.nameOfCompany"
                                   render={({ field }) => (
                                     <>
-                                      <Radio
+                                      <Input
                                         {...field}
-                                        label="Yes"
-                                        value="Yes"
-                                        ripple={true}
+                                        variant="st"
+                                        label="Company Name"
+                                        placeholder="Company Name"
                                       />
-
-                                      <Radio
-                                        {...field}
-                                        label="No"
-                                        value="No"
-                                        ripple={true}
-                                      />
-                                      {field.value === "Yes" && (
-                                        <>
-                                         <div className="w-96">
-                                        <Controller
-                                          control={control}
-                                          name="isUnderHirePurchase.nameOfCompany"
-                                          render={({ field }) => (
-                                            <>
-                                              <Input
-                                                {...field}
-                                                variant="st"
-                                                label="Company Name"
-                                                placeholder="Company Name"
-                                              />
-                                            </>
-                                          )}
-                                        />
-                                        </div>
-                                        <div className="w-96">
-                                        <Controller
-                                          control={control}
-                                          name="isUnderHirePurchase.addressOfCompany"
-                                          render={({ field }) => (
-                                            <>
-                                              <Input
-                                                {...field}
-                                                variant="st"
-                                                label="Company Address"
-                                                placeholder="Company Address"
-                                              />
-                                            </>
-                                          )}
-                                        />
-                                        </div>
-                                        </>
-                                      )}
                                     </>
                                   )}
                                 />
                               </div>
+                              <div className="w-96">
+                                <Controller
+                                  control={control}
+                                  name="isUnderHirePurchase.addressOfCompany"
+                                  render={({ field }) => (
+                                    <>
+                                      <Input
+                                        {...field}
+                                        variant="st"
+                                        label="Company Address"
+                                        placeholder="Company Address"
+                                      />
+                                    </>
+                                  )}
+                                />
+                              </div>
+                            </>
+                          )}
+                        </>
+                      )}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
